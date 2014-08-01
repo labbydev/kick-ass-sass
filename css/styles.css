@@ -62,4 +62,7 @@ body{
 }
 .reveal pre code {
   margin-bottom: 2em;
+  font-size: 1.25em;
+  line-height: 1.15em;
 }
+
