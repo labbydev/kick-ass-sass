@@ -1,0 +1,45 @@
+body{
+  font-family: 'Raleway', sans-serif;
+  font-size: 24px;
+}
+
+.offscreen{
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  text-indent: -99999999px;
+}
+
+.reveal section img{
+  border: none;
+}
+
+.right{
+  float: right;
+  margin-left: 1em;
+}
+
+.left{
+  float: left;
+  margin-right: 1em;
+}
+
+.half{
+  width: 48%;
+}
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6{
+  color: #cf2c47;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 2px #000;
+}
+
+.reveal a:not(.image){
+  color: #f59d16;
+}
+
+.reveal small{
+  font-size: .8em;
+}
