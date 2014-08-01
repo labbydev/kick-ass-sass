@@ -29,17 +29,37 @@ body{
 }
 
 .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6{
-  color: #cf2c47;
-  font-family: 'Raleway', sans-serif;
+/*  color: #cf2c47;
+*/ 
+ font-family: 'Raleway', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   text-shadow: 2px 2px 2px #000;
+  color: #CF3C8F;
 }
 
 .reveal a:not(.image){
-  color: #f59d16;
+/*  color: #f59d16; */
+  color: #02BDB5;
+
+}
+.reveal a:not(.image):hover{
+  color: #018B85;
 }
 
 .reveal small{
   font-size: .8em;
+}
+
+.reveal ul li,
+.reveal p {
+  padding-bottom: 0.5em;
+  line-height: 1.5em;
+}
+
+.reveal p.intro-slide {
+  padding-top: 20em;
+}
+.reveal pre code {
+  margin-bottom: 2em;
 }

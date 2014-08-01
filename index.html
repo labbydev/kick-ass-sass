@@ -46,16 +46,26 @@
       <!-- Presenetation -->
       <div class="slides">
         <!-- Introduction -->
-        <section>
-          <img src="images/title-screen.png" alt="Kick Ass with Sass" />
-          <h1 class="offscreen">Kick Ass with Sass</h1>
-          <p>
-            <small><a href="http://laurenabyrwa.com">Lauren Byrwa</a> / <a href="http://twitter.com/labyrwa">@labyrwa</a></small><br />
-            <small>Heather Rodriguez / <a href="http://twitter.com/hrodrig">@hrodrig</a></small><br />
-            <small><a href="http://rockcreeksm.com">Rock Creek Strategic Marketing</a> / <a href="http://twitter.com/rockcreeksm">@rockcreeksm</a></small>
-          </p>
+        <section data-background="images/title-screen.png" alt="Kick Ass with Sass">
+<!--           <img src="images/title-screen.png" alt="Kick Ass with Sass" />
+ -->          <h1 class="offscreen">Kick Ass with Sass</h1>
+          <p class="intro-slide">
+              <small><a href="http://laurenabyrwa.com">Lauren Byrwa</a> / <a href="http://twitter.com/labyrwa">@labyrwa</a></small><br />
+              <small>Heather Rodriguez / <a href="http://twitter.com/hrodrig">@hrodrig</a></small><br />
+              <small><a href="http://rockcreeksm.com">Rock Creek Strategic Marketing</a> / <a href="http://twitter.com/rockcreeksm">@rockcreeksm</a></small>
+            </p>
           <aside class="notes">
-            Survey of room- who’s heard of Sass? How many are currently using Sass? 
+           This talk is aimed at those developers and/or designers who are comfortable with CSS already and are curious to hear more about Sass and how it can kick boring, bloated CSS ass. 
+          Introduction to Lauren and Heather
+            We work for Rock Creek
+            Follow us on the Twitters
+
+            We’re going to be focusing our talk today on:
+            What is Sass
+            Why you should use it
+            Some of the features and terminology of Sass
+            and challenges to incorporating Sass into your workflow 
+ 
           </aside>
         </section>
 
@@ -65,11 +75,11 @@
             <h2>What is Sass?</h2>
 
             <aside class="notes">
-              Spend more time on this it goes kinda fast
+              You may be asking yourself, What is Sass? Is it an entirely new language? Do I really need to use the command line? It’s so scary! 
             </aside>
           </section>
-          <section data-background="images/i-dunno-lol_1_.jpg">
-
+          <section>
+            <img src="images/i-dunno-lol_1_.jpg" alt="doggy who doesn't know">
             <aside class="notes">
               again more time I feel like
             </aside>
@@ -145,8 +155,6 @@ body ul {
             <aside class="notes">
               One of the fundamental principles of good performance and good code is the concept of Don’t Repeat Yourself. Whatever CSS organizational methodology you adopt, whether it’s BEM, OOCSS, or SMACSS, all best practices agree that more code is worse code. 
 Harder to maintain, worse for performance, more difficult for those team members working on your project or coming after you to clean up your mess.
-
-you’re tripping all over yourself here
             </aside>
           </section>
           <section data-background="images/chloe-moretz-kick-ass.jpg">
@@ -170,7 +178,6 @@ you’re tripping all over yourself here
               Define components once and reuse them throughout your project, rather than repeating the same CSS over and over (change your font-size or font-family in one line and it will update everywhere!)
 Nest your CSS for more logical, maintainable stylesheets (use wisely!)
 Perform advanced processing before your CSS is compiled, such as calculating color functions or creating image sprites
-if we’re going to animate we should animate everywhere or else it seems counter intuitive to just see it here
             </aside>
           </section>
           <section>
@@ -443,9 +450,9 @@ _typography.scss
             </code></pre>
           </section>
           <section>
-            <h3>Extend/Inheritence</h3>
+            <h3>Extend/Inheritance</h3>
             <p>Using @extend lets you share CSS properties from one selector to another. </p>
-            <p>It really helps keep your CSS DRY</p>
+            <p>It really helps keep your CSS DRY.</p>
           </section>
           <section>
             <h4>SCSS</h4>
@@ -614,10 +621,10 @@ _typography.scss
           </section>
           <section>
             <h2>Getting Started</h2>
-            <p>Install Ruby if not already installed</p>
+            <p>Install Ruby</p>
             <ul>
-              <li>Mac’s have it by default (win for us!)</li>
-              <li>If using a PC <a href="http://rubyinstaller.org/">learn more here</a></li>
+              <li>Macs already come with Ruby (win for us!)</li>
+              <li><a href="http://rubyinstaller.org/">Download Ruby for PC</a></li>
             </ul>
             <p>Open Terminal and run a short command</p>
             <pre><code>gem install sass</code></pre>
@@ -625,16 +632,14 @@ _typography.scss
           </section>
           <section>
             <h2>Compiling your Sass</h2>
-            <p>You can do it with sass alone</p>
+            <p>Sass can compile itself</p>
             <pre><code>sass --watch path/sass-directory</code></pre>
-            <p>But Libraries do that, and so much more</p>
-            <p>A couple honorable mentions: Compass, and Bourbon</p>
+            <p>So can libraries such as Compass or Bourbon, which can also add much more functionality</p>
             <pre><code>gem install compass
 compass watch
 compass compile
             </code></pre>
-            <p>Not a Terminal fan? There's an App for that</p>
-            <p>Honorable mentions: Scout, and CodeKit</p>
+            <p>Not a Terminal fan? Try Scout or CodeKit</p>
           </section>
         </section>
         
@@ -678,7 +683,7 @@ compass compile
             <h2>Any Questions?</h2>
             <p>
               <small><a href="http://laurenabyrwa.com">Lauren Byrwa</a> / <a href="http://twitter.com/labyrwa">@labyrwa</a></small><br />
-              <small>Heather Rodriguez / <a href="http://twitter.com/hrodig">@hrodig</a></small><br />
+              <small>Heather Rodriguez / <a href="http://twitter.com/hrodrig">@hrodrig</a></small><br />
               <small><a href="http://rockcreeksm.com">Rock Creek Strategic Marketing</a> / <a href="http://twitter.com/rockcreeksm">@rockcreeksm</a></small>
             </p>
           </section>
