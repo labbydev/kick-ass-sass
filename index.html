@@ -86,7 +86,7 @@
           </section>
           <section>
             <h2>Sass is CSS Extended</h2>
-            <p>Sass is a lean, clean CSS extension language:<br />You write Sass; your browser sees CSS. </p>
+            <p class="fragment" >Sass is a lean, clean CSS extension language:<br />You write Sass; your browser sees CSS. </p>
             <img src="images/scss-to-sass.png" alt="Illustration of how Sass converts .scss files into .css files">
             <aside class="notes">
               Sass is a scripting language that gets interpreted into CSS stylesheets. You write your Sass in files with the extension .scss, and then it gets translated into CSS that your browser can read (browsers don’t understand straight Sass).  Sass is based on CSS, so you’re not learning an entirely different new language. It’s like CSS but leaner, and cleaner.
@@ -114,8 +114,8 @@ body {
   }
 }
             </code></pre>
-            <h3>What the browser sees</h3>
-            <pre><code>body {
+            <h3 class="fragment">What the browser sees</h3>
+            <pre class="fragment"><code>body {
   font-family: "Arial, Helvetica, sans-serif";
 }
 body a {
@@ -139,12 +139,12 @@ body ul {
           </section>
           <section>
             <h2>The problem with CSS</h2>
-            <img class="right half" src="images/110112-walter-reeves_3.jpg" alt="plants growing all over and entirely covering a house">
+            <img class="right half fragment" src="images/110112-walter-reeves_3.jpg" alt="plants growing all over and entirely covering a house">
             <ul class="half left">
-              <li>Repetitive and messy</li>
-              <li>Bad coupling</li>
-              <li>Bloated code</li>
-              <li>Longer stylesheets are more difficult to maintain</li>
+              <li class="fragment">Repetitive and messy</li>
+              <li class="fragment">Bad coupling</li>
+              <li class="fragment">Bloated code</li>
+              <li class="fragment">Longer stylesheets are more difficult to maintain</li>
             </ul>
             <aside class="notes">
               as projects get larger, CSS doesn’t scale in a maintainable and organized fashion. 
@@ -167,12 +167,12 @@ Harder to maintain, worse for performance, more difficult for those team members
           <section>
             <h2>Benefits of using Sass</h2>
             <ul>
-              <li>Change values in one place; updates everywhere</li>
-              <li>Write less code in less time!</li>
-              <li>Improve site performance</li>
-              <li>Organize files for better findability</li>
-              <li>Use cool features such as functions and mixins absent from CSS</li>
-              <li>It keeps your css DRY (don’t repeat yourself)</li> 
+              <li class="fragment">Change values in one place; updates everywhere</li>
+              <li class="fragment">Write less code in less time!</li>
+              <li class="fragment">Improve site performance</li>
+              <li class="fragment">Organize files for better findability</li>
+              <li class="fragment">Use cool features such as functions and mixins absent from CSS</li>
+              <li class="fragment">Sass keeps your CSS DRY (Don’t Repeat Yourself)</li> 
             </ul>
             <aside class="notes">
               Define components once and reuse them throughout your project, rather than repeating the same CSS over and over (change your font-size or font-family in one line and it will update everywhere!)
@@ -196,23 +196,23 @@ Perform advanced processing before your CSS is compiled, such as calculating col
           </section>
           <section>
             <h3>Variables</h3>
-            <p>Variables store small pieces of information for reuse throughout your stylesheets.</p>
+            <p class="fragment">Variables store small pieces of information for reuse throughout your stylesheets.</p>
             <ul>
-              <li>Colors</li>
-              <li>Font stacks</li>
-              <li>Breakpoints</li>
-              <li>Common font sizes</li>
+              <li class="fragment">Colors</li>
+              <li class="fragment">Font stacks</li>
+              <li class="fragment">Breakpoints</li>
+              <li class="fragment">Common font sizes</li>
             </ul>
           </section>
           <section>
             <p>$variable-name: code;</p>
-            <pre><code>// Fonts
+            <pre class="fragment"><code>// Fonts
 $nimbus-sans:     "nimbus-sans", Times, serif;
 $bold:           500;
 $normal:         400;
 $light:          300;
           </pre></code>
-          <pre><code>// Colors
+          <pre class="fragment"><code>// Colors
 $highlight-color: #ffca0a;
 $link-color: #ff0000;
 $black: #000000;
@@ -222,11 +222,11 @@ $charcoal: darken($white, 70);
           </section>
           <section>
             <h3>Operators</h3>
-            <p>Math is hard. Let Sass take care of the work.</p>
+            <p class="fragment">Math is hard. Let Sass take care of the work.</p>
           </section>
           <section>
             <h4>SCSS</h4>
-            <pre><code>.container{
+            <pre class="fragment"><code>.container{
   width: 100%;
 }
 
@@ -240,8 +240,8 @@ aside[role=”complimentary”]{
   width: 300px / 960px * 100%;
 }
             </code></pre>
-            <h4>CSS</h4>
-            <pre><code>.container{
+            <h4 class="fragment">CSS</h4>
+            <pre class="fragment"><code>.container{
   width: 100%;
 }
 
@@ -258,11 +258,11 @@ aside[role=”complimentary”]{
           </section>
           <section>
             <h3>Nesting</h3>
-            <p>Visual hierarchy makes it easy to understand and organize selector relationships.</p>
+            <p class="fragment">Visual hierarchy makes it easy to understand and organize selector relationships.</p>
           </section>
           <section>
             <h4>SCSS</h4>
-            <pre><code>.breadcrumb {
+            <pre class="fragment"><code>.breadcrumb {
   font-size: .8em;
   margin-bottom: 2rem;
   li {
@@ -276,8 +276,8 @@ aside[role=”complimentary”]{
   }
 }
             </code></pre>
-            <h4>CSS</h4>
-            <pre><code>.breadcrumb {
+            <h4 class="fragment">CSS</h4>
+            <pre class="fragment"><code>.breadcrumb {
   font-size: .8em;
   margin-bottom: 2rem;
 }
@@ -294,26 +294,26 @@ aside[role=”complimentary”]{
           </section>
           <section>
             <h3>Ampersand (&amp;)</h3>
-            <p>Use to merge two selectors, either preceding or following an element.</p>
-            <p>Use Cases:</p>
+            <p class="fragment">Use to merge two selectors, either preceding or following an element.</p>
+            <p class="fragment">Use Cases:</p>
             <ul>
-              <li>Pseudo elements</li>
-              <li>Hover and focus states</li>
-              <li>Modernizr, HTML5 Boilerplate, Google Webfont loader classes</li>
+              <li class="fragment">Pseudo elements</li>
+              <li class="fragment">Hover and focus states</li>
+              <li class="fragment">Modernizr, HTML5 Boilerplate, Google Webfont loader classes</li>
             </ul>
           </section>
           <section>
             <h4>Preceeding Ampersand (&amp;)</h4>
             <h5>SCSS</h5>
-            <pre><code>.menu a{
+            <pre class="fragment"><code>.menu a{
   color: $crimson;
   &:hover{
     color: $white;
   }
 }
             </code></pre>
-            <h5>CSS</h5>
-            <pre><code>.menu a{
+            <h5 class="fragment">CSS</h5>
+            <pre class="fragment"><code>.menu a{
   color: #ed1c24;
 }
 .menu a:hover{
@@ -324,7 +324,7 @@ aside[role=”complimentary”]{
           <section>
             <h4>Trailing Ampersand (&amp;)</h4>
             <h5>SCSS</h5>
-            <pre><code>.accordion__header{
+            <pre class="fragment"><code>.accordion__header{
   margin: 0;
   background: url(../images/retina/accordion-down.png) no-repeat;
   background-size: 13px;
@@ -333,8 +333,8 @@ aside[role=”complimentary”]{
   }
 }
             </code></pre>
-            <h5>CSS</h5>
-            <pre><code>.accordion__header {
+            <h5 class="fragment">CSS</h5>
+            <pre class="fragment"><code>.accordion__header {
   margin: 0;
   background: url(../images/retina/accordion-down.png) no-repeat;
   background-size: 13px;
@@ -351,8 +351,8 @@ aside[role=”complimentary”]{
           </section>
           <section>
             <h3>Partials</h3>
-            <p>Split your CSS into smaller, more maintainable snippets</p>
-            <p>Partials are NOT standalone CSS files</p>
+            <p class="fragment"> Split your CSS into smaller, more maintainable snippets</p>
+            <p class="fragment">Partials are NOT standalone CSS files</p>
             <aside class="notes">
               COMPARTMENTALIZE
 User doesn’t see the partials as separate CSS files; partials are important to make code more findable and organized for your benefit.
@@ -361,7 +361,7 @@ Partials are meant to be IMPORTED
           </section>
           <section>
             <p>_filename.scss</p>
-            <pre><code>_alerts.scss
+            <pre class="fragment"><code>_alerts.scss
 _buttons.scss
 _checkboxes.scss
 _footer.scss
@@ -376,14 +376,14 @@ _typography.scss
           <section>
             <h3>Import</h3>
             <ul class="half left">
-              <li>Use @import to combine partials into one file</li>
-              <li>One HTTP request per non-partial file</li>
-              <li>CSS uses @import but creates many HTTP requests</li>
+              <li class="fragment">Use @import to combine partials into one file</li>
+              <li class="fragment">One HTTP request per non-partial file</li>
+              <li class="fragment">CSS uses @import but creates many HTTP requests</li>
             </ul>
-            <img class="half right" src="images/importing-diagram.png" alt="diagram showing three different files being combined into one file"/>
+            <img class="half right fragment" src="images/importing-diagram.png" alt="diagram showing three different files being combined into one file"/>
           </section>
           <section>
-            <pre><code>@import "base";
+            <pre class="fragment"><code>@import "base";
 @import "reset";
 @import "layouts/responsive";
 @import "components/header";
@@ -403,22 +403,22 @@ _typography.scss
           <section>
             <h3>Mixins</h3>
             <ul class="left half">
-              <li>Groupings of CSS declarations you define once and reuse throughout website</li>
-              <li>Can include variables</li>
-              <li>Use cases:
+              <li class="fragment">Groupings of CSS declarations you define once and reuse throughout website</li>
+              <li class="fragment">Can include variables</li>
+              <li class="fragment">Use cases:
                 <ul>
-                  <li>retina sprites</li>
-                  <li>clearfix</li>
-                  <li>breakpoints</li>
-                  <li>CSS3/Vendor prefixes</li>
+                  <li class="fragment">retina sprites</li>
+                  <li class="fragment">clearfix</li>
+                  <li class="fragment">breakpoints</li>
+                  <li class="fragment">CSS3/Vendor prefixes</li>
                 </ul>
               </li>
             </ul>
-            <img class="half right" src="http://www.ameliapowerdesign.com/blog/wp-content/uploads/2012/09/sassy-mixins1.jpg" alt="ecard of a guy mixing drinks that says, 'our mixins will get you just as sassy with none of the regret the next morning'" />
+            <img class="half right fragment" src="http://www.ameliapowerdesign.com/blog/wp-content/uploads/2012/09/sassy-mixins1.jpg" alt="ecard of a guy mixing drinks that says, 'our mixins will get you just as sassy with none of the regret the next morning'" />
           </section>
           <section>
             <h4>Mixin</h4>
-            <pre><code>@mixin css-scale($value){
+            <pre><code class="fragment">@mixin css-scale($value){
   transform: scale($value);
   -webkit-transform: scale($value);
   -moz-transform: scale($value);
@@ -426,8 +426,8 @@ _typography.scss
   -ms-transform: scale($value);
 }
             </code></pre>
-            <h4>SCSS</h4>
-            <pre><code>.hover-content--featured{
+            <h4 class="fragment">SCSS</h4>
+            <pre class="fragment"><code>.hover-content--featured{
   @include css-scale(1);
   background: $viking;
   font-size: 1.333333333rem;
@@ -435,8 +435,8 @@ _typography.scss
   height: 100%;
 }
             </code></pre>
-            <h4>CSS</h4>
-            <pre><code>.hover-content--featured{
+            <h4 class="fragment">CSS</h4>
+            <pre class="fragment"><code>.hover-content--featured{
   transform: scale(1);
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
@@ -451,12 +451,12 @@ _typography.scss
           </section>
           <section>
             <h3>Extend/Inheritance</h3>
-            <p>Using @extend lets you share CSS properties from one selector to another. </p>
-            <p>It really helps keep your CSS DRY.</p>
+            <p class="fragment">Using @extend lets you share CSS properties from one selector to another. </p>
+            <p class="fragment">It really helps keep your CSS DRY.</p>
           </section>
           <section>
             <h4>SCSS</h4>
-            <pre><code>.btn{
+            <pre class="fragment"><code>.btn{
   background: $whitesmoke;
   color: $mirage;
   padding: .6rem .8rem;
@@ -469,8 +469,8 @@ _typography.scss
   padding-right: 2.133333333rem;
 }
             </code></pre>
-            <h4>CSS</h4>
-            <pre><code>.btn,
+            <h4 class="fragment">CSS</h4>
+            <pre class="fragment"><code>.btn,
 .btn--expand{
   background: $whitesmoke;
   color: $mirage;
@@ -486,8 +486,8 @@ _typography.scss
           </section>
           <section>
             <h3>When do you use a @mixin vs @extend?</h3>
-            <p>@mixin repeats the code every time and the CSS gets bloated</p>
-            <p>@extend will add the selectors together and then output the code just once</p>
+            <p class="fragment">@mixin repeats the code every time and the CSS gets bloated</p>
+            <p class="fragment">@extend will add the selectors together and then output the code just once</p>
             <aside class="notes">
               MIXIN - So much for not repeating ourselves
               EXTEND - This is DRYer, however it can still get kind of bloated and messy especially if you never use just “.box” in the website
@@ -495,7 +495,7 @@ _typography.scss
           </section>
           <section>
             <h4>Mixin - SCSS</h4>
-            <pre><code>@mixin element-invisible{
+            <pre class="fragment"><code>@mixin element-invisible{
     position: absolute;
     height: 1px;
     width: 1px;
@@ -510,8 +510,8 @@ _typography.scss
     @include element-invisible;
     }
             </pre></code>
-            <h4>Mixin - CSS</h4>
-            <pre><code>.foo{
+            <h4 class="fragment">Mixin - CSS</h4>
+            <pre class="fragment"><code>.foo{
     position: absolute !important;
     height: 1px;
     width: 1px;
@@ -528,7 +528,7 @@ _typography.scss
           </section>
           <section>
             <h4>Extend - SCSS<h4>
-              <pre><code>.element-invisible{
+              <pre class="fragment"><code>.element-invisible{
   position: absolute !important;
   height: 1px;
   width: 1px;
@@ -543,8 +543,8 @@ _typography.scss
   @extend element-invisible;
 }
               </pre></code>
-            <h4>Extend - CSS</h4>
-              <pre><code>.element-invisible,
+            <h4 class="fragment">Extend - CSS</h4>
+              <pre class="fragment"><code>.element-invisible,
 .foo,
 .bar{
   position: absolute !important;
@@ -557,17 +557,17 @@ _typography.scss
           </section>
           <section>
             <h3>So really, when do you use @mixin vs @extend?</h3>
-            <p>ANSWER:</p>
-            <p>%placeholder with @extend</p>
+            <p class="fragment">ANSWER:</p>
+            <p class="fragment">%placeholder with @extend</p>
           </section>
           <section>
             <h3>Placeholder</h3>
-            <p>Using with @extend lets you combine the selectors</p>
-            <p>No worries about unused selectors</p>
+            <p class="fragment">Using placeholder (%) with @extend lets you combine the selectors</p>
+            <p class="fragment">No worries about unused selectors</p>
           </section>
           <section>
             <h4>SCSS</h4>
-            <pre><code>%element-invisible{
+            <pre class="fragment"><code>%element-invisible{
   position: absolute !important;
   height: 1px;
   width: 1px;
@@ -582,8 +582,8 @@ _typography.scss
   @extend element-invisible;
 }
             </code></pre>
-            <h4>CSS</h4>
-            <pre><code>.foo,
+            <h4 class="fragment">CSS</h4>
+            <pre class="fragment"><code>.foo,
 .bar{
   position: absolute !important;
   height: 1px;
@@ -594,13 +594,13 @@ _typography.scss
           </section>
           <section>
             <h3>So when do you use each?</h3>
-            <h4>Mixin:</h4>
-            <p>When you use a variable or the output changes</p>
-            <h4>Extend:</h4>
-            <p>when you’re using the original selector already</p>
-            <h4>Placeholder:</h4>
-            <p>when the code is always the same</p>
-            <p>when you don’t need the original selector</p>
+            <h4 class="fragment">Mixin:</h4>
+            <p class="fragment">When you use a variable or the output changes</p>
+            <h4 class="fragment">Extend:</h4>
+            <p class="fragment">when you’re using the original selector already</p>
+            <h4 class="fragment"> Placeholder:</h4>
+            <p class="fragment">when the code is always the same</p>
+            <p class="fragment">when you don’t need the original selector</p>
           </section>
         </section>
 
@@ -610,36 +610,36 @@ _typography.scss
           </section>
           <section>
             <h2>Drupal and Sass</h2>
-            <p>Base themes that support Sass:</p>
+            <p class="fragment">Base themes that support Sass:</p>
             <ul>
-              <li>Zen 5</li>
-              <li>Omega 4</li>
-              <li>Aurora</li>
-              <li>Adaptive Theme</li>
-              <li>and others…</li>
+              <li class="fragment">Zen 5</li>
+              <li class="fragment">Omega 4</li>
+              <li class="fragment">Aurora</li>
+              <li class="fragment">Adaptive Theme</li>
+              <li class="fragment">and others…</li>
             </ul>
           </section>
           <section>
             <h2>Getting Started</h2>
-            <p>Install Ruby</p>
+            <h4 class="fragment">Install Ruby</h4>
             <ul>
-              <li>Macs already come with Ruby (win for us!)</li>
-              <li><a href="http://rubyinstaller.org/">Download Ruby for PC</a></li>
+              <li class="fragment">Macs already come with Ruby (win for us!)</li>
+              <li class="fragment"><a href="http://rubyinstaller.org/">Download Ruby for PC</a></li>
             </ul>
-            <p>Open Terminal and run a short command</p>
-            <pre><code>gem install sass</code></pre>
-            <p>YAY! YOU’VE INSTALLED SASS</p>
+            <p class="fragment">Open Terminal and run a short command</p>
+            <pre class="fragment"><code>gem install sass</code></pre>
+            <p class="fragment">YAY! YOU’VE INSTALLED SASS</p>
           </section>
           <section>
             <h2>Compiling your Sass</h2>
-            <p>Sass can compile itself</p>
-            <pre><code>sass --watch path/sass-directory</code></pre>
-            <p>So can libraries such as Compass or Bourbon, which can also add much more functionality</p>
-            <pre><code>gem install compass
+            <p class="fragment">Sass can compile itself</p>
+            <pre class="fragment"><code>sass --watch path/sass-directory</code></pre>
+            <p class="fragment">So can libraries such as Compass or Bourbon, which can also add much more functionality</p>
+            <pre class="fragment"><code>gem install compass
 compass watch
 compass compile
             </code></pre>
-            <p>Not a Terminal fan? Try Scout or CodeKit</p>
+            <p class="fragment">Not a Terminal fan? Try Scout or CodeKit</p>
           </section>
         </section>
         
@@ -647,9 +647,9 @@ compass compile
         <section>
           <section>
             <h2>Sass Challenges</h2>
-            <p>Nesting: can get crazy long and over specific</p>
-            <p>Versioning: Bundler to keep team members on same gem</p>
-            <p>Keep output in mind: Using @import to separate out files requires a logical structure</p>
+            <p class="fragment">Nesting: can get crazy long and over specific</p>
+            <p class="fragment">Versioning: Bundler to keep team members on same gem</p>
+            <p class="fragment">Keep output in mind: Using @import to separate out files requires a logical structure</p>
           </section>
           <section>
             <img src="images/sass-tips-nest.jpg" alt="Spiderman meme that says, 'With great nesting power comes great responsibility'" />
@@ -661,17 +661,17 @@ compass compile
           <section>
             <h2>More stuff to Sass out About</h2>
             <ul class="half left">
-              <li>Lists</li>
-              <li>Maps</li>
-              <li>Programmatic functions
+              <li class="fragment">Lists</li>
+              <li class="fragment">Maps</li>
+              <li class="fragment">Programmatic functions
                 <ul>
-                  <li>@if/@else</li>
-                  <li>@while</li>
-                  <li>@each</li>
+                  <li class="fragment">@if/@else</li>
+                  <li class="fragment">@while</li>
+                  <li class="fragment">@each</li>
                 </ul>
               </li>
             </ul>
-            <img class="half right" src="images/the-sass-is-strong-in-this-one.png" alt="Darth Vader meme that says, 'The sass is strong with this one'" />
+            <img class="half right fragment" src="images/the-sass-is-strong-in-this-one.png" alt="Darth Vader meme that says, 'The sass is strong with this one'" />
           </section>
           <section>
             <h2>Resources to learn more</h2>
