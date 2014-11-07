@@ -6,7 +6,7 @@
 
     <title>Kick Ass with Sass</title>
 
-    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="description" content="Although it’s powerful, Sass can be intimidating for beginners. In this session, we'll go over what you need to know to get started kicking boring, bloated CSS's ass with Sass.">
     <meta name="author" content="Lauren Byrwa">
     <meta name="author" content="Heather Rodriguez">
 
@@ -46,27 +46,33 @@
       <!-- Presenetation -->
       <div class="slides">
         <!-- Introduction -->
-        <section data-background="images/title-screen.png" alt="Kick Ass with Sass">
-<!--           <img src="images/title-screen.png" alt="Kick Ass with Sass" />
- -->          <h1 class="offscreen">Kick Ass with Sass</h1>
-          <p class="intro-slide">
-              <small><a href="http://laurenabyrwa.com">Lauren Byrwa</a> / <a href="http://twitter.com/labyrwa">@labyrwa</a></small><br />
-              <small>Heather Rodriguez / <a href="http://twitter.com/hrodrig">@hrodrig</a></small><br />
-              <small><a href="http://rockcreeksm.com">Rock Creek Strategic Marketing</a> / <a href="http://twitter.com/rockcreeksm">@rockcreeksm</a></small>
-            </p>
-          <aside class="notes">
-           This talk is aimed at those developers and/or designers who are comfortable with CSS already and are curious to hear more about Sass and how it can kick boring, bloated CSS ass. 
-          Introduction to Lauren and Heather
-            We work for Rock Creek
-            Follow us on the Twitters
-
-            We’re going to be focusing our talk today on:
-            What is Sass
-            Why you should use it
-            Some of the features and terminology of Sass
-            and challenges to incorporating Sass into your workflow 
- 
-          </aside>
+        <section>
+          <section data-background="images/title-screen.png" alt="Kick Ass with Sass">
+  <!--           <img src="images/title-screen.png" alt="Kick Ass with Sass" />
+   -->          <h1 class="offscreen">Kick Ass with Sass</h1>
+            <aside class="notes">
+             This talk is aimed at those developers and/or designers who are comfortable with CSS already and are curious to hear more about Sass and how it can kick boring, bloated CSS ass. 
+              We’re going to be focusing our talk today on:
+              What is Sass
+              Why you should use it
+              Some of the features and terminology of Sass
+              and challenges to incorporating Sass into your workflow 
+            </aside>
+          </section>
+          <section>
+            <h2>Who Are We</h2>
+            <p>Lauren Byrwa<br />
+            <small><a href="http://twitter.com/labyrwa">@labyrwa</a></small><br />
+            <small>Front End Developer at <a href="http://palantir.net/">Palantir.net</a></small></p>
+            <p>Heather Rodriguez<br />
+            <small><a href="http://twitter.com/hrodrig">@hrodrig</a></small><br />
+            <small>Web Developer at <a href="http://rockcreeksm.com/">Rock Creek Strategic Marketing</a></small></p>
+          </section>
+          <section>
+            <h2>Slides</h2>
+            <p><large>Available Online</large></p>
+            <a href="http://labyrwa.github.io/kick-ass-sass/#/">http://labyrwa.github.io/kick-ass-sass/</a>
+          </section>
         </section>
 
         <!-- What is Sass? -->
@@ -114,8 +120,8 @@ body {
   }
 }
             </code></pre>
-            <h3 class="fragment">What the browser sees</h3>
-            <pre class="fragment"><code>body {
+            <h3>What the browser sees</h3>
+            <pre><code>body {
   font-family: "Arial, Helvetica, sans-serif";
 }
 body a {
@@ -168,9 +174,10 @@ Harder to maintain, worse for performance, more difficult for those team members
             <h2>Benefits of using Sass</h2>
             <ul>
               <li class="fragment">Change values in one place; updates everywhere</li>
-              <li class="fragment">Write less code in less time!</li>
+              <li class="fragment">Write less code</li>
+              <li class="fragment">Spend less time in development</li>
               <li class="fragment">Improve site performance</li>
-              <li class="fragment">Organize files for better findability</li>
+              <li class="fragment">Organize files for better maintainability</li>
               <li class="fragment">Use cool features such as functions and mixins absent from CSS</li>
               <li class="fragment">Sass keeps your CSS DRY (Don’t Repeat Yourself)</li> 
             </ul>
@@ -293,6 +300,10 @@ aside[role=”complimentary”]{
             </code></pre>
           </section>
           <section>
+            <img src="images/sass-tips-nest.jpg" alt="Spiderman meme that says, 'With great nesting power comes great responsibility'" />
+            <p>Nest Sparingly and avoid overly specific code</p>
+          </section>
+          <section>
             <h3>Ampersand (&amp;)</h3>
             <p class="fragment">Use to merge two selectors, either preceding or following an element.</p>
             <p class="fragment">Use Cases:</p>
@@ -375,12 +386,12 @@ _typography.scss
           </section>
           <section>
             <h3>Import</h3>
+            <img class="half right" src="images/importing-diagram.png" alt="diagram showing three different files being combined into one file"/>
             <ul class="half left">
               <li class="fragment">Use @import to combine partials into one file</li>
               <li class="fragment">One HTTP request per non-partial file</li>
               <li class="fragment">CSS uses @import but creates many HTTP requests</li>
             </ul>
-            <img class="half right fragment" src="images/importing-diagram.png" alt="diagram showing three different files being combined into one file"/>
           </section>
           <section>
             <pre class="fragment"><code>@import "base";
@@ -402,6 +413,7 @@ _typography.scss
           </section>
           <section>
             <h3>Mixins</h3>
+            <img class="half right" src="http://www.ameliapowerdesign.com/blog/wp-content/uploads/2012/09/sassy-mixins1.jpg" alt="ecard of a guy mixing drinks that says, 'our mixins will get you just as sassy with none of the regret the next morning'" />
             <ul class="left half">
               <li class="fragment">Groupings of CSS declarations you define once and reuse throughout website</li>
               <li class="fragment">Can include variables</li>
@@ -414,7 +426,6 @@ _typography.scss
                 </ul>
               </li>
             </ul>
-            <img class="half right fragment" src="http://www.ameliapowerdesign.com/blog/wp-content/uploads/2012/09/sassy-mixins1.jpg" alt="ecard of a guy mixing drinks that says, 'our mixins will get you just as sassy with none of the regret the next morning'" />
           </section>
           <section>
             <h4>Mixin</h4>
@@ -527,20 +538,20 @@ _typography.scss
             </pre></code>
           </section>
           <section>
-            <h4>Extend - SCSS<h4>
+            <h4>Extend - SCSS</h4>
               <pre class="fragment"><code>.element-invisible{
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
+position: absolute !important;
+height: 1px;
+width: 1px;
+overflow: hidden;
 }
 
 .foo{
-  @extend element-invisible;
+@extend element-invisible;
 }
 
 .bar{
-  @extend element-invisible;
+@extend element-invisible;
 }
               </pre></code>
             <h4 class="fragment">Extend - CSS</h4>
@@ -651,9 +662,6 @@ compass compile
             <p class="fragment">Versioning: Bundler to keep team members on same gem</p>
             <p class="fragment">Keep output in mind: Using @import to separate out files requires a logical structure</p>
           </section>
-          <section>
-            <img src="images/sass-tips-nest.jpg" alt="Spiderman meme that says, 'With great nesting power comes great responsibility'" />
-          </section>
         </section>
 
         <!-- More to Learn -->
@@ -682,9 +690,8 @@ compass compile
           <section data-background="http://4.bp.blogspot.com/-mS9-GrccevM/UlBKRAzBynI/AAAAAAAALGo/ozHiOIxp4m8/s00/Wallpapers_Kick_Ass_02.jpg">
             <h2>Any Questions?</h2>
             <p>
-              <small><a href="http://laurenabyrwa.com">Lauren Byrwa</a> / <a href="http://twitter.com/labyrwa">@labyrwa</a></small><br />
-              <small>Heather Rodriguez / <a href="http://twitter.com/hrodrig">@hrodrig</a></small><br />
-              <small><a href="http://rockcreeksm.com">Rock Creek Strategic Marketing</a> / <a href="http://twitter.com/rockcreeksm">@rockcreeksm</a></small>
+              <small>Lauren Byrwa</a> / <a href="http://twitter.com/labyrwa">@labyrwa</a></small><br />
+              <small>Heather Rodriguez / <a href="http://twitter.com/hrodrig">@hrodrig</a></small>
             </p>
           </section>
         </section>
@@ -693,7 +700,7 @@ compass compile
     </div>
 
     <script src="lib/js/head.min.js"></script>
-    <script src="js/reveal.min.js"></script>
+    <script src="js/reveal.js"></script>
 
     <script>
 
