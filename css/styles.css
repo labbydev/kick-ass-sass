@@ -3,6 +3,10 @@ body{
   font-size: 24px;
 }
 
+strong{
+  color: #CF3C8F;
+}
+
 .offscreen{
   position: absolute;
   height: 1px;
