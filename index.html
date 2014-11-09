@@ -47,10 +47,11 @@
       <div class="slides">
         <!-- Introduction -->
         <section>
-          <section data-background="images/title-screen-1024x768.png" alt="Kick Ass with Sass">
+          <section data-background="images/title-screen-1024x768.jpg" alt="Kick Ass with Sass">
   <!--           <img src="images/title-screen.png" alt="Kick Ass with Sass" />
    -->          <h1 class="offscreen">Kick Ass with Sass</h1>
             <aside class="notes">
+              DON'T INTRODUCE US YET, JUST THE TALK
              This talk is aimed at those developers and/or designers who are comfortable with CSS already and are curious to hear more about Sass and how it can kick boring, bloated CSS ass. 
               We’re going to be focusing our talk today on:
               What is Sass
@@ -67,6 +68,7 @@
             <p>Heather Rodriguez<br />
             <small><a href="http://twitter.com/hrodrig">@hrodrig</a></small><br />
             <small>Web Developer at <a href="http://rockcreeksm.com/">Rock Creek Strategic Marketing</a></small></p>
+            <aside class="notes">NOW INTRODUCE US. Basically we rock!</aside>
           </section>
           <section>
             <h2>Slides</h2>
@@ -79,16 +81,19 @@
         <section>
           <section data-background="images/KickAss3-lg.jpg">
             <h2>What is Sass?</h2>
-
+          </section>
+          <section>
+            <img src="images/i-dunno-lol_1_.jpg" alt="doggy who doesn't know">
             <aside class="notes">
               You may be asking yourself, What is Sass? Is it an entirely new language? Do I really need to use the command line? It’s so scary! 
             </aside>
           </section>
           <section>
-            <img src="images/i-dunno-lol_1_.jpg" alt="doggy who doesn't know">
-            <aside class="notes">
-              again more time I feel like
-            </aside>
+            <h2>Sass is...</h2>
+            <p>a scripting language that interpreted into CSS; implemented through an open-source Ruby gem</p> 
+            <p class="fragment">Stands for Syntactically Awesome Stylesheets</p>
+            <p class="fragment">Designed by Hampton Catlin and developed by Natalie Weizenbaum</p>
+            <p class="fragment">Is the chosen CSS preprocessor by 80% of the Drupal community</p>
           </section>
           <section>
             <h2>Sass is CSS Extended</h2>
@@ -133,7 +138,7 @@ body ul {
 }
             </code></pre>
             <aside class="notes">
-              Sass is what you’re writing; after Sass does the compiling, the browser will see the CSS.cpdc
+              Sass is what you’re writing; after Sass does the compiling, the browser will see the CSS.
             </aside>
           </section>
         </section>
@@ -148,9 +153,9 @@ body ul {
             <img class="right half fragment" src="images/110112-walter-reeves_3.jpg" alt="plants growing all over and entirely covering a house">
             <ul class="half left">
               <li class="fragment">Repetitive and messy</li>
-              <li class="fragment">Bad coupling</li>
+              <li class="fragment">Bad coupling (especially in Drupal)</li>
               <li class="fragment">Bloated code</li>
-              <li class="fragment">Longer stylesheets are more difficult to maintain</li>
+              <li class="fragment">Longer stylesheets are more difficult to maintain and terrible for performance</li>
             </ul>
             <aside class="notes">
               as projects get larger, CSS doesn’t scale in a maintainable and organized fashion. 
@@ -228,8 +233,30 @@ $charcoal: darken($white, 70);
           </code></pre>
           </section>
           <section>
+            <h3>SCSS</h3>
+            <pre class="fragment"><code>// Fonts
+$nimbus-sans:     "nimbus-sans", Times, serif;
+$highlight-color: #ffca0a;
+$bold:           500;
+blockquote{
+  font-family: $nimbus-sans;
+  color: $highlight-color;
+  font-weight: $bold;
+}
+          </pre></code>
+          <h3>CSS</h3>
+          <pre class="fragment"><code>// Colors
+blockquote{
+  font-family: "nimbus-sans", Times, serif;
+  color: #ffca0a;
+  font-weight: 500;
+}
+          </code></pre>
+          </section>
+          <section>
             <h3>Operators</h3>
             <p class="fragment">Math is hard. Let Sass take care of the work.</p>
+            <aside class="notes">Operators allow you to let Sass do the Math for you. And are especially great for creating custom grids and layouts.</aside>
           </section>
           <section>
             <h4>SCSS</h4>
@@ -317,7 +344,7 @@ aside[role=”complimentary”]{
             <h4>Preceeding Ampersand (&amp;)</h4>
             <h5>SCSS</h5>
             <pre class="fragment"><code>.menu a{
-  color: $crimson;
+color: $crimson;
   &:hover{
     color: $white;
   }
@@ -386,7 +413,7 @@ _typography.scss
           </section>
           <section>
             <h3>Import</h3>
-            <img class="half right" src="images/importing-diagram-corrected.png" alt="diagram showing three different files being combined into one file"/>
+            <img class="half right" src="images/importing-diagram-corrected.jpg" alt="diagram showing three different files being combined into one file"/>
             <ul class="half left">
               <li class="fragment">Use @import to combine partials into one file</li>
               <li class="fragment">One HTTP request per non-partial file</li>
@@ -429,17 +456,16 @@ _typography.scss
           </section>
           <section>
             <h4>Mixin</h4>
-            <pre><code class="fragment">@mixin css-scale($value){
-  transform: scale($value);
-  -webkit-transform: scale($value);
-  -moz-transform: scale($value);
-  -o-transform: scale($value);
-  -ms-transform: scale($value);
+            <pre><code class="fragment">@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
 }
             </code></pre>
             <h4 class="fragment">SCSS</h4>
             <pre class="fragment"><code>.hover-content--featured{
-  @include css-scale(1);
+  @include border-radius(10px);
   background: $viking;
   font-size: 1.333333333rem;
   font-weight: $semibold;
@@ -448,11 +474,10 @@ _typography.scss
             </code></pre>
             <h4 class="fragment">CSS</h4>
             <pre class="fragment"><code>.hover-content--featured{
-  transform: scale(1);
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  -o-transform: scale(1);
-  -ms-transform: scale(1);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
   background: $viking;
   font-size: 1.333333333rem;
   font-weight: $semibold;
@@ -639,7 +664,7 @@ overflow: hidden;
             </ul>
             <p class="fragment">Open Terminal and run a short command</p>
             <pre class="fragment"><code>gem install sass</code></pre>
-            <p class="fragment">YAY! YOU’VE INSTALLED SASS</p>
+            <p class="fragment"><strong>YAY! YOU’VE INSTALLED SASS</strong></p>
           </section>
           <section>
             <h2>Compiling your Sass</h2>
@@ -650,6 +675,7 @@ overflow: hidden;
 compass watch
 compass compile
             </code></pre>
+            <p class="fragment">If you're using a task runner like Gulp and Grunt, that will compile too.</p>
             <p class="fragment">Not a Terminal fan? Try Scout or CodeKit</p>
           </section>
         </section>
@@ -661,6 +687,7 @@ compass compile
             <p class="fragment">Nesting: can get crazy long and over specific</p>
             <p class="fragment">Versioning: Bundler to keep team members on same gem</p>
             <p class="fragment">Keep output in mind: Using @import to separate out files requires a logical structure</p>
+            <p class="fragment"><strong>If you write bad CSS, you will write bad Sass</strong></p>
           </section>
         </section>
 
@@ -668,24 +695,91 @@ compass compile
         <section>
           <section>
             <h2>More stuff to Sass out About</h2>
-            <ul class="half left">
-              <li class="fragment">Lists</li>
-              <li class="fragment">Maps</li>
-              <li class="fragment">Programmatic functions
-                <ul>
-                  <li class="fragment">@if/@else</li>
-                  <li class="fragment">@while</li>
-                  <li class="fragment">@each</li>
-                </ul>
-              </li>
-            </ul>
-            <img class="half right fragment" src="images/the-sass-is-strong-in-this-one.png" alt="Darth Vader meme that says, 'The sass is strong with this one'" />
+            <div class="half left">
+              <p class="fragment"><strong>Data type:</strong> a way of classifying a piece of information. Common examples in programming are booleans, strings and integers</p>
+              <p class="fragment"><strong>Control structure:</strong> instruction to the computer on how to evaluate a piece of data.</p>
+            </div>
+            <img class="half right" src="images/the-sass-is-strong-in-this-one.png" alt="Darth Vader meme that says, 'The sass is strong with this one'" />
+            <aside class="notes">Once you get used to using Sass it becomes really powerful when you start talking about Data Types and Control Structures. While we could go do an entire session on these more advanced features we're just going to go over a couple of highlights.</aside>
+          </section>
+          <section>
+            <h3>Data Types &amp; Control Structures</h3>
+            <div class="fragment half left">
+              <h4>Data Types</h4>
+              <ul>
+                <li>Numbers</li>
+                <li>Strings</li>
+                <li>Colors</li>
+                <li>Booleans</li>
+                <li>Null</li>
+                <li>Lists</li>
+                <li>Maps</li>
+              </ul>
+            </div>
+            <div class="fragment half right">
+              <h3>Control Structures</h3>
+              <ul>
+                <li>@while</li>
+                <li>@for</li>
+                <li>@if/@elseif/@else</li>
+                <li>@each</li>
+              </ul>
+            </div>
+            <aside class="notes">While all of these data types have a number of helpful functions that we can work with today we're going to focus on Maps and Lists</aside>
+          </section>
+          <section>
+          <h3>Lists and Maps</h3>
+            <p class="fragment">Lists = arrays<br />Maps = hashes</p>
+            <pre class="fragment"><code>$social: (
+    "facebook":       '\f204',
+    "twitter":        '\f202',
+    "linkedin":       '\f207',
+    "pinterest":      '\f209',
+    "github":         '\f200',
+    "dribbble":       '\f201',
+    "instagram":      '\f215',
+    "email":          '\f410'
+  );</code></pre>
+            <p class="fragment">And can also be multidimensional</p>
+            <pre class="fragment"><code>$mega-social: (
+    "facebook":   ( content: "\f204", coords: 0 0 ),
+    "twitter":    ( content: "\f202", coords: 0 -64px ),
+    "linkedin":   ( content: "\f207", coords: 0 -128px )
+  );</code></pre>
+            </section>
+          <section>
+            <h3>@each</h3>
+              <h4 class="fragment">Mixin</h4>
+              <pre class="fragment"><code>@each $network, $content in $social {
+  .#{$network} a:before {
+    content: $content;
+  }
+}</code></pre>
+          <h4 class="fragment">CSS</h4>
+          <pre class="fragment"><code>.facebook a:before {
+  content: '\f204';
+}
+
+.twitter a:before {
+  content: '\f202';
+}
+
+.linkedin a:before {
+  content: '\f207';
+}
+
+...</code></pre>
           </section>
           <section>
             <h2>Resources to learn more</h2>
-            <p><a href="http://thesassway.com/news/sass-3-3-released">The Sass Way</a></p>
-            <p><a href="http://viget.com/extend/sass-maps-are-awesome">Sass Maps are Awesome - Viget</a></p>
-            <p><a href="http://davidwalsh.name/future-sass">The future of Sass - David Walsh</a></p>
+            <ul>
+              <li><a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#data_types">Sass Documentation (Data Types)</a></li>
+              <li><a href="http://viget.com/extend/sass-maps-are-awesome">Sass Maps Are Awesome!</a> - Viget</li>
+              <li><a href="http://thesassway.com/news/sass-3-3-released">Maptastic Maple</a> - The Sass Way</li>
+              <li><a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#control_directives__expressions">Sass Documentation (Control Directives &amp; Expressions)</a></li>
+              <li><a href="http://thesassway.com/intermediate/if-for-each-while">Sass control directives</a> - The Sass Way</li>
+              <li><a href="http://davidwalsh.name/future-sass">The Future of Sass</a> - David Walsh</li>
+            </ul>
           </section>
           <section data-background="http://4.bp.blogspot.com/-mS9-GrccevM/UlBKRAzBynI/AAAAAAAALGo/ozHiOIxp4m8/s00/Wallpapers_Kick_Ass_02.jpg">
             <h2>Any Questions?</h2>
